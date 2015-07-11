@@ -15,6 +15,7 @@
 		94B7DA131B51BBC700BF6FF4 /* Shame_NunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B7DA121B51BBC700BF6FF4 /* Shame_NunTests.swift */; };
 		94B7DA1E1B51BF3D00BF6FF4 /* shame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 94B7DA1D1B51BF3D00BF6FF4 /* shame.mp3 */; };
 		94B7DA201B51C57200BF6FF4 /* shake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 94B7DA1F1B51C57200BF6FF4 /* shake.jpg */; };
+		94B7DA221B51D49C00BF6FF4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 94B7DA211B51D49C00BF6FF4 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		94B7DA121B51BBC700BF6FF4 /* Shame_NunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shame_NunTests.swift; sourceTree = "<group>"; };
 		94B7DA1D1B51BF3D00BF6FF4 /* shame.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shame.mp3; sourceTree = "<group>"; };
 		94B7DA1F1B51C57200BF6FF4 /* shake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shake.jpg; sourceTree = "<group>"; };
+		94B7DA211B51D49C00BF6FF4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		94B7D9EE1B51BBC700BF6FF4 = {
 			isa = PBXGroup;
 			children = (
+				94B7DA211B51D49C00BF6FF4 /* README.md */,
 				94B7DA1C1B51BF0200BF6FF4 /* Resources */,
 				94B7D9F91B51BBC700BF6FF4 /* Shame Nun */,
 				94B7DA0F1B51BBC700BF6FF4 /* Shame NunTests */,
@@ -228,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94B7DA221B51D49C00BF6FF4 /* README.md in Sources */,
 				94B7D9FF1B51BBC700BF6FF4 /* ViewController.swift in Sources */,
 				94B7D9FD1B51BBC700BF6FF4 /* AppDelegate.swift in Sources */,
 			);
