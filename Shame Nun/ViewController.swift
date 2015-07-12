@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         configureAudioSession()
         configureAudioPlayer()
         configureView()
+        configureGestures()
     }
     
     func shame() {
@@ -58,6 +59,11 @@ class ViewController: UIViewController {
         })
 
         shakeIconView()
+    }
+
+    func configureGestures() {
+        let gesture = UITapGestureRecognizer(target: self, action: "shame")
+        view.addGestureRecognizer(gesture)
     }
 
     func shakeIconView() {
