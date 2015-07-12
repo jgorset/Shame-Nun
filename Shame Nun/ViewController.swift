@@ -43,11 +43,12 @@ class ViewController: UIViewController {
     func configureView() {
         self.view.backgroundColor = UIColor.blackColor()
 
-        let image     = UIImage(named: "shake.jpg", inBundle: NSBundle.mainBundle(), compatibleWithTraitCollection: nil)
+        let image = UIImage(named: "shake.jpg", inBundle: NSBundle.mainBundle(), compatibleWithTraitCollection: nil)
 
         iconView = UIImageView(image: image)
 
-        iconView.center = view.center
+        iconView.layer.anchorPoint = CGPointMake(0.5, 1)
+        iconView.center = CGPointMake(view.center.x, (view.bounds.height / 2) + (iconView.bounds.height / 2))
         iconView.transform = CGAffineTransformMakeScale(0.1, 0.1)
         
         view.addSubview(iconView)
@@ -60,21 +61,22 @@ class ViewController: UIViewController {
     }
 
     func shakeIconView() {
-        var shake:CABasicAnimation = CABasicAnimation(keyPath: "position")
-        shake.duration = 0.1
-        shake.repeatCount = 2
-        shake.autoreverses = true
-        
-        var fromPoint:CGPoint = CGPointMake(iconView.center.x - 15, iconView.center.y)
-        var fromValue:NSValue = NSValue(CGPoint: fromPoint)
-        
-        var toPoint:CGPoint = CGPointMake(iconView.center.x + 15, iconView.center.y)
-        var toValue:NSValue = NSValue(CGPoint: toPoint)
-        
-        shake.fromValue = fromValue
-        shake.toValue = toValue
-        iconView.layer.addAnimation(shake, forKey: "position")
+        // Ewww. There's a nicer way to do this, right? RIGHT?
+        UIView.animateWithDuration(0.2, animations: {
+            self.iconView.transform = CGAffineTransformRotate(self.iconView.transform, 0.1)
+        }, completion: {
+            (value: Bool) in
 
+            UIView.animateWithDuration(0.2, animations: {
+                self.iconView.transform = CGAffineTransformRotate(self.iconView.transform, -0.2)
+            }, completion: {
+                (value: Bool) in
+
+                UIView.animateWithDuration(0.2, animations: {
+                    self.iconView.transform = CGAffineTransformRotate(self.iconView.transform, 0.1)
+                })
+            })
+        })
     }
 
     override func canBecomeFirstResponder() -> Bool {
